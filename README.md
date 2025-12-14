@@ -19,24 +19,42 @@ This manual provides a "recipe" for building your **Persona** application, capab
     *   **Frontend**: React / Next.js.
 
 ## 3. Architecture Design
-```mermaid
-graph TD
-    User[User (Web/Mobile)] -->|Question (Audio/Text)| API[FastAPI Backend]
-    
-    subgraph "AI PC (Backend)"
-        API -->|1. Search| RAG[RAG Engine]
-        RAG -->|Retrieve| VectorDB[(Emails/Docs)]
-        VectorDB -->|Context| RAG
-        
-        RAG -->|2. Prompt (+Context)| LLM[LLM (Llama 3)]
-        LLM -->|3. Text Response| API
-        
-        LLM -->|Text| TTS[TTS Engine (XTTS v2)]
-        TTS -->|Reference Audio| AudioStore[(Voice Samples)]
-        TTS -->|4. Audio Response| API
-    end
-    
-    API -->|Audio + Text| User
+```text
++---------------------+
+|  User (Web/Mobile)  |
++----------+----------+
+           |
+           | Question (Audio/Text)
+           v
++----------+----------+
+|   FastAPI Backend   |<----------------------------------------------+
++----------+----------+                                               |
+           |                                                          |
+           | 1. Search                                                | Audio
+           v                                                          | + Text
++-----------------------------------------------------------------+   |
+|                        AI PC (Backend)                          |   |
+|                                                                 |   |
+|   +------------+                               +------------+   |   |
+|   | RAG Engine |<-------- (Retrieve) --------->|  VectorDB  |   |   |
+|   +-----+------+                               +------------+   |   |
+|         |                                       (Emails/Docs)   |   |
+|         | 2. Prompt (+Context)                                  |   |
+|         v                                                       |   |
+|   +------------+           Text                +------------+   |   |
+|   |    LLM     |------------------------------>| TTS Engine |   |   |
+|   +-----+------+                               +------+-----+   |   |
+|         |                                             ^         |   |
+|         | 3. Text Response                            | Ref     |   |
+|         |                                             | Audio   |   |
+|         v                                      +------+-----+   |   |
+|   (To API)                                     | AudioStore |   |   |
+|                                                +------------+   |   |
+|                                                                 |   |
+|                                                4. Audio Resp    |   |
++-------------------------------------------------------+---------+   |
+                                                        |             |
+                                                        +-------------+
 ```
 
 ## 4. Implementation Cookbook
