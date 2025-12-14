@@ -2,6 +2,22 @@
 
 This manual provides a "recipe" for building your **Persona** application, capable of mimicking a specific individual's style and voice.
 
+# 0. Requirements
+I'm planning to build nVDA 40xx GPU based project for a peronal project - The project is tentative named "Persona" The Persona will be trained to mimic a persona based on their style of writing, their pdfs, docs, responses and their voice.
+
+Here are all the inputs that I can provide intelligence about the persona
+1. Several emails from the person that can indicate how the person interacts on email 
+2. Several of their voice recording that informs about their voice, inflection and how they talk in tamil and English.
+Using those as as the input, bild a persona ? For now just start with the audio for the persona; as the second phase, we can add video.
+3. Approach build in an incremental way in terms of features
+    * First audio responses by the persona for the question asked
+    * Then potentially look to add video
+5. From a systems architecture perspective:
+   * Start with the the AI PC that will run a opensource model and hopefully the RAG-ified voices and emails.
+   * Connect to the back-end AI-PC and ask the question when the persona would respond in its voice
+
+Expanding and building on these, the second stage of system architecture, build Mobile web app and then progressively as an Android app.
+
 ## 1. System Overview
 **Goal**: Create an AI clone running locally on an NVIDIA 40xx GPU.
 **Core Function**: User asks a question -> AI references emails/docs (Style/Knowledge) -> AI generates text -> AI speaks text in Persona's voice.
