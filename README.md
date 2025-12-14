@@ -1,11 +1,12 @@
 # Persona Project: System Architecture & Implementation Cookbook
 
-This manual provides a "recipe" for building your **Persona** application, capable of mimicking a specific individual's style and voice.
+Here is a summary of the Project Persona, its requirements and high level approach;
+#### *Tldr:* Builds a **Persona** application, capable of mimicking a specific individual's style and voice.
 
 # 0. Requirements
-I'm planning to build nVDA 40xx GPU based project for a peronal project - The project is tentative named "Persona" The Persona will be trained to mimic a persona based on their style of writing, their pdfs, docs, responses and their voice.
+Goal is to build a Persona based on  nVDA 40xx GPU based AI/PC - The project is tentative named "Persona" The Persona will be trained to mimic a persona based on their style of writing, their pdfs, docs, responses and their voice.
 
-Here are all the inputs that I can provide intelligence about the persona
+Here are all the inputs that provides intelligence about the persona,
 1. Several emails from the person that can indicate how the person interacts on email 
 2. Several of their voice recording that informs about their voice, inflection and how they talk in tamil and English.
 Using those as as the input, bild a persona ? For now just start with the audio for the persona; as the second phase, we can add video.
