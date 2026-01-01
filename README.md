@@ -1,4 +1,4 @@
-# Persona Project: System Architecture & Implementation Cookbook
+# Persona Project: System Architecture & Approach
 
 Here is a summary of the Project Persona, its requirements and high level approach;
 #### *Tldr:* Builds a **Persona** application, capable of mimicking a specific individual's style and voice.
