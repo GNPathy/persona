@@ -1,23 +1,8 @@
-# Persona Project: System Architecture & Approach
+# Persona Project: System Architecture & Implementation Cookbook
 
-Here is a summary of the Project Persona, its requirements and high level approach;
-#### *Tldr:* Builds a **Persona** application, capable of mimicking a specific individual's style and voice.
+> **[View High Level Plan and Approach](HIGH_LEVEL_PLAN.md)**
 
-# 0. Requirements
-Goal is to build a Persona based on  nVDA 40xx GPU based AI/PC - The project is tentative named "Persona" The Persona will be trained to mimic a persona based on their style of writing, their pdfs, docs, responses and their voice.
-
-Here are all the inputs that provides intelligence about the persona,
-1. Several emails from the person that can indicate how the person interacts on email 
-2. Several of their voice recording that informs about their voice, inflection and how they talk in tamil and English.
-Using those as as the input, bild a persona ? For now just start with the audio for the persona; as the second phase, we can add video.
-3. Approach build in an incremental way in terms of features
-    * First audio responses by the persona for the question asked
-    * Then potentially look to add video
-5. From a systems architecture perspective:
-   * Start with the the AI PC that will run a opensource model and hopefully the RAG-ified voices and emails.
-   * Connect to the back-end AI-PC and ask the question when the persona would respond in its voice
-
-Expanding and building on these, the second stage of system architecture, build Mobile web app and then progressively as an Android app.
+This manual provides a "recipe" for building your **Persona** application, capable of mimicking a specific individual's style and voice.
 
 ## 1. System Overview
 **Goal**: Create an AI clone running locally on an NVIDIA 40xx GPU.
@@ -121,4 +106,4 @@ Expanding and building on these, the second stage of system architecture, build 
 ## 5. Next Steps
 1.  **Scaffold Project**: Create the directory structure.
 2.  **Environment Setup**: Install Python, CUDA, PyTorch.
-3.  **2Ps - Plan & Prototype**: Create a Plan and start prototyping
+3.  **Prototype**: Build a simple script to verify XTTS acts like the persona.

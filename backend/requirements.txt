@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+python-multipart
+chromadb
+sentence-transformers
+torch
+torchaudio
+TTS
+langchain
+langchain-community
+pypdf
+beautifulsoup4
