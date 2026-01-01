@@ -121,4 +121,4 @@ Expanding and building on these, the second stage of system architecture, build 
 ## 5. Next Steps
 1.  **Scaffold Project**: Create the directory structure.
 2.  **Environment Setup**: Install Python, CUDA, PyTorch.
-3.  **Prototype**: Build a simple script to verify XTTS acts like the persona.
+3.  **2Ps - Plan & Prototype**: Create a Plan and start prototyping
